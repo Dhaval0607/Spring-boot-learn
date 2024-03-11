@@ -1,0 +1,15 @@
+
+  spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: https://product-service
+          predicates:
+            - Path = /api/order
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone:  'http://localhost:8761/eureka'
+  server:
+  port: 8443
